@@ -5,10 +5,12 @@ describe("mapper", () => {
     let json;
     let jsonComment;
     let jsonComment2;
+    let jsonComment3;
     let file;
     beforeEach(() => {
         jsonComment = chance.jsonComment();
         jsonComment2 = chance.jsonComment();
+        jsonComment3 = chance.jsonComment();
         json = {
             data: jsonComment
         };
@@ -32,20 +34,27 @@ describe("mapper", () => {
     });
 
     it("should build a comment for each child and parent", () => {
-        jsonComment.replies = {
+        addCommentAsReply(jsonComment, jsonComment2);
+        addCommentAsReply(jsonComment2, jsonComment3);
+
+        const comments = generateComments(file);
+        const expectedComments = [
+            new Comment(jsonComment),
+            new Comment(jsonComment2),
+            new Comment(jsonComment3)
+        ];
+        expect(comments).to.eql(expectedComments);
+    });
+
+    function addCommentAsReply(comment, reply) {
+        comment.replies = {
             data: {
                 children: [
                     {
-                        data: jsonComment2
+                        data: reply
                     }
                 ]
             }
         };
-        const comments = generateComments(file);
-        const expectedComments = [
-            new Comment(jsonComment),
-            new Comment(jsonComment2)
-        ];
-        expect(comments).to.eql(expectedComments);
-    });
+    }
 });

@@ -1,20 +1,25 @@
+import { flattenDeep } from "lodash";
 import Comment from "./models/comment";
 
 export const generateComments = json => {
-    const comments =  json.data.children.map(generateComment);
-    return comments[0]; //Need to remove this extra array wrapping in a pretty way
+    const comments = json.data.children.map(generateComment);
+    return flattenDeep(comments);
 };
 
 export const generateComment = json => {
-    const comments = [];
     if (!json.data.body) return;
     if (json.data.replies) {
-        comments.push(new Comment(json.data));
-        json.data.replies.data.children.map(reply => {
-            const childComment = generateComment(reply);
-            comments.push(childComment);
-        });ß
-        return comments;
+        return generateReplies(json.data);
     }
     return new Comment(json.data);
+};
+
+const generateReplies = data => {
+    const comments = [];
+    comments.push(new Comment(data));
+    data.replies.data.children.map(reply => {
+        const childComment = generateComment(reply);
+        comments.push(childComment);
+    });
+    return comments;
 };
