@@ -37,7 +37,7 @@ describe("mapper", () => {
         addCommentAsReply(jsonComment, jsonComment2);
         addCommentAsReply(jsonComment2, jsonComment3);
 
-        const comments = generateComments(file);
+        const comments = generateComments(file.data.children);
         const expectedComments = [
             new Comment(jsonComment),
             new Comment(jsonComment2),

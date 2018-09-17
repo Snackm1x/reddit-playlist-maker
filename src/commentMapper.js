@@ -2,7 +2,7 @@ import { flattenDeep } from "lodash";
 import Comment from "./models/comment";
 
 export const generateComments = json => {
-    const comments = json.data.children.map(generateComment);
+    const comments = json.map(generateComment);
     return flattenDeep(comments);
 };
 
