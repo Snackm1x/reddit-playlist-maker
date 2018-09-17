@@ -1,0 +1,30 @@
+{
+  "name": "reddit-playlist-maker",
+  "version": "1.0.0",
+  "description": "generates spotify playlist from reddit thread",
+  "main": "index.js",
+  "scripts": {
+    "linter": "eslint .",
+    "generate-list": "babel-node src/index.js",
+    "test": "mocha"
+  },
+  "author": "James Childers",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "babel-preset-env": "^1.7.0",
+    "chai": "^4.1.2",
+    "chance": "^1.0.16",
+    "dirty-chai": "^2.0.1",
+    "eslint": "^5.6.0",
+    "ignore-styles": "^5.0.1",
+    "mocha": "^5.2.0",
+    "proxyquire": "^2.1.0",
+    "sinon": "^6.3.3",
+    "sinon-chai": "^3.2.0"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0"
+  }
+}

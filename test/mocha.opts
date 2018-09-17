@@ -1,0 +1,6 @@
+--require ignore-styles
+--require babel-register
+--require ./test/spec-helper
+--reporter dot
+--colors
+--recursive
