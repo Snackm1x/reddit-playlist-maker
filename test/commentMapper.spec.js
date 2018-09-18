@@ -7,6 +7,7 @@ describe("mapper", () => {
     let jsonComment2;
     let jsonComment3;
     let file;
+    let flattenStub;
     beforeEach(() => {
         jsonComment = chance.jsonComment();
         jsonComment2 = chance.jsonComment();
@@ -16,7 +17,7 @@ describe("mapper", () => {
         };
         file = {
             data: {
-                children: [json]
+                children: [json, { data: { notBody: "derp" } }]
             }
         };
     });

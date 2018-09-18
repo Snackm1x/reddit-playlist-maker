@@ -1,7 +1,6 @@
-export const track = data => {
-    return {
-        artist: data.artist,
-        title: data.title,
-        link: data.link,
+export default class Track {
+    constructor(props) {
+        this.title = props.title;
+        this.artist = props.artist;
     }
 }

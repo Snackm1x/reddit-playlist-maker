@@ -1,8 +1,8 @@
-import fs from 'fs';
-import {loadPostComments} from 'Utilities/fileLoader';
+import fs from "fs";
+import { loadPostComments } from "Utilities/fileLoader";
 
 describe("fileLoader", () => {
-    it("should parse the json file and return the comments", () => { 
+    it("should parse the json file and return the comments", () => {
         const comments = { test: chance.name() };
         const file = [
             {
@@ -16,11 +16,13 @@ describe("fileLoader", () => {
                 }
             }
         ];
-        const fsStub = sandbox.stub(fs, 'readFileSync');
-        sandbox.stub(JSON, 'parse').returns(file);
+        const fsStub = sandbox.stub(fs, "readFileSync");
+        sandbox.stub(JSON, "parse").returns(file);
 
         const jsonComments = loadPostComments();
-        expect(fsStub).calledOnce().calledWith('./data.json');
+        expect(fsStub)
+            .calledOnce()
+            .calledWith("./data/data.json");
         expect(jsonComments).to.eql(comments);
     });
 });

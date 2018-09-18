@@ -3,7 +3,9 @@ import Comment from "./models/comment";
 
 export const generateComments = json => {
     const comments = json.map(generateComment);
-    return flattenDeep(comments);
+    return flattenDeep(comments).filter(
+        comment => comment != null || comment != undefined
+    );
 };
 
 export const generateComment = json => {
@@ -18,8 +20,7 @@ const generateReplies = data => {
     const comments = [];
     comments.push(new Comment(data));
     data.replies.data.children.map(reply => {
-        const childComment = generateComment(reply);
-        comments.push(childComment);
+        comments.push(generateComment(reply));
     });
     return comments;
 };

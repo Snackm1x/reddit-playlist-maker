@@ -1,5 +1,5 @@
 import Comment from "Models/comment";
-describe("comment mode", () => {
+describe("comment model", () => {
     it("should map fields", () => {
         const data = {
             body: chance.string(),
