@@ -59,6 +59,13 @@ describe("trackMapper", () => {
         expect(track).to.eql(undefined);
     });
 
+    it("should not checkForDuplicates if track was not created", () => {
+        const content = "la la la";
+        const comment = createComment(content);
+        const tracks = generateTracks([comment]);
+        expect(tracks).to.eql([]);
+    });
+
     const createComment = content => {
         return new Comment({
             body: content,

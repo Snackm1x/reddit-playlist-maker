@@ -4,6 +4,7 @@ export const generateTracks = comments => {
     const tracks = [];
     comments.map(comment => {
         const track = generateTrack(comment);
+        if (!track) return;
         if (!checkForDuplicates(track, tracks)) {
             tracks.push(track);
         }
