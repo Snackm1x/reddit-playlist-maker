@@ -5,9 +5,9 @@ export const generateTracks = comments => {
     comments.map(comment => {
         const track = generateTrack(comment);
         if (!track) return;
-        if (!checkForDuplicates(track, tracks)) {
-            tracks.push(track);
-        }
+        if (checkForDuplicates(track, tracks)) return;
+        if(track.title === "" || track.artist === "") return;
+        tracks.push(track);
     });
     return tracks;
 };

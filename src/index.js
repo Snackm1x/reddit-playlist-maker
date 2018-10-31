@@ -9,6 +9,7 @@ const run = () => {
     fs.writeFileSync("./data/comments.json", JSON.stringify(comments));
     const tracks = generateTracks(comments);
     fs.writeFileSync("./data/tracks.json", JSON.stringify(tracks));
+    
 };
 
 run();
