@@ -1,34 +1,34 @@
 {
-  "parserOptions": {
-    "ecmaVersion": 6,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": true
+    "plugins": ["react"],
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "env": {
+        "es6": true,
+        "browser": true,
+        "node": true
+    },
+    "extends": ["eslint:recommended", "plugin:react/recommended"],
+    "rules": {
+        "arrow-parens": 0,
+        "camelcase": 0,
+        "consistent-return": 0,
+        "complexity": [2, 4],
+        "curly": [2, "multi-line"],
+        "generator-star-spacing": [2, "after"],
+        "indent": [2, 4, { "SwitchCase": 1 }],
+        "max-statements": 0,
+        "newline-after-var": 0,
+        "no-extra-parens": 0,
+        "no-magic-numbers": 0,
+        "no-process-env": 0,
+        "one-var": 0,
+        "object-curly-newline": 0,
+        "object-property-newline": 0,
+        "sort-keys": 0
     }
-  },
-  "env": {
-    "es6": true,
-    "browser": true,
-    "node": true
-  },
-  "extends": ["eslint:recommended"],
-  "rules": {
-    "arrow-parens": 0,
-    "camelcase": 0,
-    "consistent-return": 0,
-    "complexity": [2, 4],
-    "curly": [2, "multi-line"],
-    "generator-star-spacing": [2, "after"],
-    "indent": [2, 4, { "SwitchCase": 1 }],
-    "max-statements": 0,
-    "newline-after-var": 0,
-    "no-extra-parens": 0,
-    "no-magic-numbers": 0,
-    "no-process-env": 0,
-    "no-use-before-define": [2, "nofunc"],
-    "one-var": 0,
-    "object-curly-newline": 0,
-    "object-property-newline": 0,
-    "sort-keys": 0
-  }
 }

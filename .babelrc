@@ -1,15 +1,19 @@
 {
-  "presets": ["env"],
-  "plugins": [
-    [
-      "module-resolver",
-      {
-        "root": ["./src"],
-        "alias": {
-          "Models": "./src/models",
-          "Utilities": "./src/utilities"
-        }
-      }
+    "presets": ["react", "env"],
+    "plugins": [
+        "transform-class-properties",
+        [
+            "module-resolver",
+            {
+                "root": ["./src"],
+                "alias": {
+                    "Test": "./test",
+                    "Components": "./src/components",
+                    "Containers": "./src/containers",
+                    "Styles": "./src/styles",
+                    "Img": "./assets/img"
+                }
+            }
+        ]
     ]
-  ]
 }
