@@ -1,4 +1,5 @@
-import Track from "./models/track";
+import { hyphenRegEx, byRegEx } from "../constants/regex-constants";
+import Track from "../models/track";
 
 export const generateTracks = comments => {
     const tracks = [];
@@ -35,10 +36,3 @@ const checkForDuplicates = (track, trackList) => {
     );
     return found.length > 0;
 };
-
-const hyphenRegEx = new RegExp(
-    `[A-Z | a-z | s | ' | 0-9]*-[A-Z | a-z | s | ' | 0-9]*`
-);
-const byRegEx = new RegExp(
-    `[A-Z | a-z | s | ' | 0-9]*by[A-Z | a-z | s | ' | 0-9]*`
-);

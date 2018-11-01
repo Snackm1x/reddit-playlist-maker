@@ -1,6 +1,6 @@
 import Track from "Models/track";
 import Comment from "Models/comment";
-import { generateTrack, generateTracks } from "../src/trackMapper";
+import { generateTrack, generateTracks } from "Services/track-service";
 
 describe("trackMapper", () => {
     let title;

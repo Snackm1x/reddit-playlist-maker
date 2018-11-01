@@ -10,6 +10,7 @@
                     "Test": "./test",
                     "Components": "./src/components",
                     "Containers": "./src/containers",
+                    "Services": "./src/services",
                     "Styles": "./src/styles",
                     "Img": "./assets/img"
                 }

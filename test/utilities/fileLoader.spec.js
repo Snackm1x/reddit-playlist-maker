@@ -16,8 +16,8 @@ describe("fileLoader", () => {
                 }
             }
         ];
-        const fsStub = sandbox.stub(fs, "readFileSync");
-        sandbox.stub(JSON, "parse").returns(file);
+        const fsStub = stub(fs, "readFileSync");
+        stub(JSON, "parse").returns(file);
 
         const jsonComments = loadPostComments();
         expect(fsStub)

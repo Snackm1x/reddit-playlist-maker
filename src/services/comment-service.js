@@ -1,5 +1,5 @@
 import { flattenDeep } from "lodash";
-import Comment from "./models/comment";
+import Comment from "../models/comment";
 
 export const generateComments = json => {
     const comments = json.map(generateComment);

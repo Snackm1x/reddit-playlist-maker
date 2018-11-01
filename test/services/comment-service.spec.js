@@ -1,5 +1,8 @@
 import Comment from "Models/comment";
-import { generateComment, generateComments } from "../src/commentMapper";
+import {
+    generateComment,
+    generateComments
+} from "Services/comment-service";
 
 describe("mapper", () => {
     let json;
@@ -7,7 +10,7 @@ describe("mapper", () => {
     let jsonComment2;
     let jsonComment3;
     let file;
-    let flattenStub;
+
     beforeEach(() => {
         jsonComment = chance.jsonComment();
         jsonComment2 = chance.jsonComment();
